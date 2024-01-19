@@ -24,3 +24,15 @@ terms used in playbooks from basic to advancede
 18. Delegate                    38. Conditionally Importing Tasks
 19. Vault Encryption            39. Environment Variables
 20. Dependencies                40. Static Analysis
+
+commands
+----------
+
+ansible-playbook -i invfile playbooks/nginx_sample_playbook.yml --syntax-check
+ansible-playbook -i invfile playbooks/nginx_sample_playbook.yml --check  =>similar to terraform plan
+ansible-playbook -i invfile playbooks/nginx_sample_playbook.yml -vv
+For checking the service is runing on hosts
+ ansible -i <inv-file-path> <group-name_from_inventory> -m <init-module_for_eg:systemd> -a "name=nginx state=started"
+ ansible your_target_hosts -m systemd -a "name=nginx state=stopped" 
+ ansible your_target_hosts -m systemd -a "name=nginx enabled=yes" 
+ ansible your_target_hosts -m copy -a "src=local_nginx.conf dest=/etc/nginx/nginx.conf" 
