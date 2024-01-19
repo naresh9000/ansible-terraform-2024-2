@@ -6,6 +6,7 @@
       fetch:
         src: /usr/share/nginx/html/index.html
         dest: /tmp/
+
 ---
 - hosts: pvt
   gather_facts: false
