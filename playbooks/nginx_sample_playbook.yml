@@ -1,0 +1,17 @@
+---
+- name: playbook for insdtalling the nginx
+  hosts: pvt
+  # # gather_facts: false is a playbook option that instructs
+  # Ansible to skip the default task of gathering facts about the
+  # target hosts before executing other tasks in the playbook.
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Perform APT Update
+      shell: apt update
+
+    - name: Install Nginx
+      shell: apt install nginx -y
+
+    - name: Start Nginx Service
+      shell: service nginx start
