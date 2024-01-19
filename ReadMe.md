@@ -66,6 +66,8 @@ For EX: for clear understanings
 ```
 
 
+
+
 commands
 ----------
 
@@ -85,6 +87,11 @@ run playbook using the tags::
 ---------------------------------
 ansible-playbook -i invfile playbook.yml --tags setup,deploy
 ansible-playbook -i your_inventory_file your_playbook.yml --skip-tags your_tag3,your_tag4
+
+----------------------
+**Running specific task**
+ansible-playbook -i your_inventory.ini playbook.yml --start-at-task="<task-name>"
+
 
 Note::
 **Check Logs:**
