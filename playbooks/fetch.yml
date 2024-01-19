@@ -1,0 +1,8 @@
+---
+- hosts: pvt
+  gather_facts: false
+  tasks:
+    - name: copy file from the remote to the local
+      fetch:
+        src: /usr/share/nginx/html/index.html
+        dest: /tmp/
