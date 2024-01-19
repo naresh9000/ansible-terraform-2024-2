@@ -26,15 +26,15 @@ terms used in playbooks from basic to advancede
 20. Dependencies---                40. Static Analysis
 
 IMportant points::
-------------------
+--
 **notify** keyword is used within a task to specify a list of handlers that should be
 executed when the task changes something on the managed host. Handlers are special tasks
 that are only executed when notified by other tasks.notify keyword is used to trigger handlers
------
+--
 **gather_facts**: false is a playbook option that instructs
  Ansible to skip the default task of gathering facts about the
  target hosts before executing other tasks in the playbook.
------
+--
 **delegate_to**::is a parameter that allows you to execute a task on a different host than the one defined in the play. 
 scenarios where we use the delegate_to parameter in playbook..
 Dynamic Inventory Management:
@@ -52,7 +52,7 @@ For EX: for clear understaning
       delegate_to: your_bastion_host
       remote_user: your_bastion_user
 ```
------------------
+--
 **register** keyword to capture the output of a task into a variable, and then use the debug module to display the variable's content.
 ```
 - name: Execute a command and capture output
@@ -68,8 +68,8 @@ For EX: for clear understaning
 
 
 
-commands
-----------
+**commands**
+--
 ```
 ->>ansible-playbook -i invfile playbooks/nginx_sample_playbook.yml --syntax-check
 ->>ansible-playbook -i invfile  playbooks/nginx_sample_playbook.yml --syntax-check --limit <group-name>
